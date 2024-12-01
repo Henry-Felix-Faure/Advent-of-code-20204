@@ -3,18 +3,16 @@ import java.util.ArrayList;
 import java.util.Scanner;
 import java.lang.Math;
 
-public class main {
-    static int min_and_pop(ArrayList<Integer> arr) {
-        int min = Integer.MAX_VALUE;
-        for (int i = 0; i < arr.size(); i++) {
-            if (arr.get(i) < min) {
-                min = arr.get(i);
+public class part2 {
+    static int similarity_check(int n, ArrayList<Integer> arr) {
+        int occurences = 0;
+        for (Integer current_int : arr) {
+            if (current_int == n) {
+                occurences++;
             }
         }
-        arr.remove((Integer) min);
-        return min;
+        return occurences;
     }
-
 
     public static void main(String[] args) {
         ArrayList<Integer> ls1 = new ArrayList<>();
@@ -49,8 +47,8 @@ public class main {
 
         int answer = 0;
 
-        while (!ls1.isEmpty() && !ls2.isEmpty()) {
-            answer = answer + Math.abs(min_and_pop(ls2) - min_and_pop(ls1));
+        for (Integer current_int : ls1) {
+            answer += similarity_check(current_int, ls2) * current_int;
         }
 
         System.out.println(answer);
