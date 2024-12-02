@@ -48,7 +48,6 @@ public class part1 {
         }
 
         sc.close();
-
         System.out.println(answer);
     }
 }
