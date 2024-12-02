@@ -21,7 +21,6 @@ public class part1 {
 
             System.out.println(ls);
 
-            // code
             int gen_dir = (ls.get(0) - ls.get(1)) > 0 ? 1 : -1;
             String validation = "good";
 
